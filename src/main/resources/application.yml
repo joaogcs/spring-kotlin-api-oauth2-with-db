@@ -1,0 +1,43 @@
+server:
+  port: 8080
+  error:
+    include-message: always
+    include-binding-errors: always
+
+spring:
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: validate
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: Password@123
+
+authentication:
+  client-id: your-client-id
+  client-secret: your-client-secret
+  scopes:
+    - email
+    - profile
+  authorized-grant-types:
+    - password
+    - authorization_code
+    - refresh_token
+
+springdoc:
+  writer-with-default-pretty-printer: true
+  writer-with-order-by-keys: true
+  swagger-ui:
+    displayRequestDuration: true
+    path: /swagger-ui.html
+    oauth:
+      appName: spring-kotlin-user-oauth2-postgresql
+  configs:
+    token-url: http://localhost:8080/oauth/token
+    scopes:
+      - name: email
+        item: email
+      - name: profile
+        item: profile
+  show-actuator: true
