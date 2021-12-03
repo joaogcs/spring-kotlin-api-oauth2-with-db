@@ -1,6 +1,6 @@
 # spring-kotlin-user-oauth2-postgresql
 This API was developed using the stacks:
-- Kotlin 1.4
+- Kotlin 1.6
 - JVM 11
 - Spring Boot
 - Maven
